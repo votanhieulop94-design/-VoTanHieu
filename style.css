@@ -28,15 +28,19 @@ body{
 .navbar{
 
   width:100%;
+
   height:80px;
 
   display:flex;
+
   justify-content:space-between;
+
   align-items:center;
 
-  padding:0 80px;
+  padding:0 clamp(20px,5vw,80px);
 
   position:fixed;
+
   top:0;
 
   z-index:1000;
@@ -50,14 +54,18 @@ body{
 
   color:#00e5ff;
 
-  font-size:40px;
+  font-size:clamp(24px,3vw,40px);
+
   font-weight:700;
 }
 
 nav{
 
   display:flex;
-  gap:40px;
+
+  gap:clamp(10px,2vw,40px);
+
+  flex-wrap:wrap;
 }
 
 nav a{
@@ -66,7 +74,7 @@ nav a{
 
   color:white;
 
-  font-size:20px;
+  font-size:clamp(12px,1vw,18px);
 
   transition:0.3s;
 }
@@ -82,6 +90,8 @@ nav a:hover{
 
   min-height:100vh;
 
+  width:100%;
+
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -91,7 +101,10 @@ nav a:hover{
 
   position:relative;
 
-  padding:120px 20px 80px;
+  padding:
+  clamp(120px,15vw,180px)
+  clamp(20px,5vw,80px)
+  clamp(80px,10vw,120px);
 }
 
 .glow{
@@ -112,8 +125,8 @@ nav a:hover{
 
 .avatar{
 
-  width:220px;
-  height:220px;
+  width:clamp(140px,18vw,240px);
+  height:clamp(140px,18vw,240px);
 
   object-fit:cover;
 
@@ -136,7 +149,7 @@ nav a:hover{
 
   letter-spacing:6px;
 
-  font-size:14px;
+  font-size:clamp(10px,1vw,14px);
 
   z-index:2;
 }
@@ -145,7 +158,7 @@ nav a:hover{
 
   margin-top:25px;
 
-  font-size:92px;
+  font-size:clamp(52px,8vw,120px);
 
   font-family:'Space Grotesk', sans-serif;
 
@@ -170,7 +183,7 @@ nav a:hover{
 
   font-family:'Space Grotesk', sans-serif;
 
-  font-size:46px;
+  font-size:clamp(24px,4vw,52px);
 
   font-weight:500;
 
@@ -185,13 +198,15 @@ nav a:hover{
 
   margin-top:30px;
 
-  max-width:850px;
+  max-width:900px;
+
+  width:100%;
 
   color:#cbd5e1;
 
-  font-size:24px;
+  font-size:clamp(15px,2vw,24px);
 
-  line-height:1.7;
+  line-height:1.8;
 
   z-index:2;
 }
@@ -200,7 +215,7 @@ nav a:hover{
 
 .card{
 
-  width:80%;
+  width:min(92%,1400px);
 
   margin:80px auto;
 
@@ -210,7 +225,7 @@ nav a:hover{
 
   border-radius:30px;
 
-  padding:50px;
+  padding:clamp(25px,4vw,60px);
 
   backdrop-filter:blur(14px);
 }
@@ -219,7 +234,7 @@ nav a:hover{
 
   color:#00e5ff;
 
-  font-size:52px;
+  font-size:clamp(32px,4vw,52px);
 
   margin-bottom:30px;
 }
@@ -228,9 +243,9 @@ nav a:hover{
 
   color:#e2e8f0;
 
-  font-size:28px;
+  font-size:clamp(16px,2vw,24px);
 
-  line-height:1.7;
+  line-height:1.8;
 }
 
 /* CONTACT */
@@ -239,7 +254,7 @@ nav a:hover{
 
   background:rgba(255,255,255,0.03);
 
-  padding:30px;
+  padding:clamp(20px,3vw,30px);
 
   border-radius:20px;
 
@@ -273,7 +288,7 @@ nav a:hover{
 
   text-decoration:none;
 
-  font-size:28px;
+  font-size:clamp(15px,2vw,24px);
 
   word-break:break-word;
 }
@@ -282,11 +297,11 @@ nav a:hover{
 
 .section-title{
 
-  width:90%;
+  width:100%;
 
-  margin:0 auto 40px;
+  margin-bottom:40px;
 
-  font-size:58px;
+  font-size:clamp(38px,5vw,58px);
 
   color:#00e5ff;
 
@@ -297,9 +312,9 @@ nav a:hover{
 
 .timeline-section{
 
-  width:90%;
+  width:min(92%,1400px);
 
-  margin:100px auto;
+  margin:120px auto;
 }
 
 .timeline{
@@ -358,7 +373,7 @@ nav a:hover{
 
   border-radius:30px;
 
-  padding:35px;
+  padding:clamp(25px,4vw,40px);
 
   backdrop-filter:blur(14px);
 
@@ -376,7 +391,7 @@ nav a:hover{
 
   color:#00e5ff;
 
-  font-size:38px;
+  font-size:clamp(28px,4vw,40px);
 
   margin-bottom:15px;
 }
@@ -385,30 +400,33 @@ nav a:hover{
 
   color:#dbe4f0;
 
-  font-size:24px;
+  font-size:clamp(15px,2vw,22px);
 
-  line-height:1.7;
+  line-height:1.8;
 }
 
 /* PROJECTS */
 
 .projects-section{
 
-  width:90%;
+  width:min(92%,1400px);
 
-  margin:100px auto;
+  margin:120px auto;
 }
 
 .projects-grid{
 
   display:grid;
 
-  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  grid-template-columns:
+  repeat(auto-fit,minmax(320px,1fr));
 
   gap:40px;
 }
 
 .project-card{
+
+  width:100%;
 
   background:rgba(10,20,40,0.65);
 
@@ -416,7 +434,7 @@ nav a:hover{
 
   border-radius:35px;
 
-  padding:40px;
+  padding:clamp(25px,4vw,45px);
 
   backdrop-filter:blur(14px);
 
@@ -452,7 +470,7 @@ nav a:hover{
 
 .project-card h4{
 
-  font-size:42px;
+  font-size:clamp(28px,4vw,42px);
 
   margin-bottom:20px;
 
@@ -461,7 +479,7 @@ nav a:hover{
 
 .project-card p{
 
-  font-size:22px;
+  font-size:clamp(15px,2vw,22px);
 
   line-height:1.8;
 
@@ -489,7 +507,7 @@ nav a:hover{
 
   border-radius:20px;
 
-  font-size:16px;
+  font-size:14px;
 
   color:#dbe4f0;
 }
@@ -508,7 +526,7 @@ nav a:hover{
 
   text-decoration:none;
 
-  font-size:22px;
+  font-size:clamp(16px,2vw,22px);
 
   font-weight:600;
 
@@ -537,75 +555,48 @@ nav a:hover{
 
   .navbar{
 
-    height:70px;
+    height:auto;
 
-    padding:0 20px;
-  }
+    padding:15px 20px;
 
-  .logo{
-
-    font-size:24px;
-  }
-
-  nav{
+    flex-direction:column;
 
     gap:15px;
   }
 
-  nav a{
+  nav{
 
-    font-size:14px;
+    justify-content:center;
   }
 
-  .hero{
+  .timeline{
 
-    padding:120px 20px 60px;
+    padding-left:35px;
   }
 
-  .avatar{
+  .timeline-dot{
 
-    width:150px;
-    height:150px;
+    width:20px;
+    height:20px;
+
+    left:-35px;
   }
 
-  .hero h1{
+  .timeline-content{
 
-    font-size:52px;
+    padding:22px;
   }
 
-  .hero h2{
+  .project-tags{
 
-    font-size:30px;
+    gap:10px;
   }
 
-  .description{
+  .project-tags span{
 
-    font-size:16px;
-  }
+    font-size:13px;
 
-  .section-title{
-
-    font-size:38px;
-  }
-
-  .timeline-content h4{
-
-    font-size:28px;
-  }
-
-  .timeline-content p{
-
-    font-size:16px;
-  }
-
-  .project-card h4{
-
-    font-size:30px;
-  }
-
-  .project-card p{
-
-    font-size:17px;
+    padding:10px 14px;
   }
 
   .project-btn{
@@ -613,7 +604,11 @@ nav a:hover{
     width:100%;
 
     text-align:center;
+  }
 
-    font-size:18px;
+  .contact-box a,
+  .contact-box p{
+
+    font-size:15px;
   }
 }

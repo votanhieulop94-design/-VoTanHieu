@@ -4,10 +4,10 @@ window.addEventListener("scroll", () => {
 
   if(window.scrollY > 50){
 
-    navbar.style.background = "rgba(2,6,23,0.75)";
+    navbar.style.background = "rgba(2,6,23,0.85)";
 
   }else{
 
     navbar.style.background = "transparent";
   }
-}); 
+});
